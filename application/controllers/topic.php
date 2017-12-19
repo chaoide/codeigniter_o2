@@ -5,31 +5,15 @@ class Topic extends CI_Controller {
 
 	public function index()
 	{
-		echo '
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="utf-8"/>
-            </head>
-            <body>
-                토픽 메인 페이지
-            </body>
-        </html>
-        ';
+		$this->load->view('head');
+		$this->load->view('main');
+		$this->load->view('footer');
 	}
 
 	public function get($id)
 	{
-		echo '
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="utf-8"/>
-            </head>
-            <body>
-                토픽 '.$id.'
-            </body>
-        </html>
-        ';
+		$this->load->view('head');
+		$this->load->view('get', array('id'=>$id));
+		$this->load->view('footer');
 	}
 }
