@@ -10,7 +10,8 @@ class Auth extends MY_controller {
 	public function login() {
 		$this->_head();
 
-		$this->load->view('login');
+		$this->load->helper('url');
+		$this->load->view('login', array('returnURL'=>$this->input->get('returnURL')));
 
 		$this->_footer();
 	}
@@ -57,7 +58,8 @@ class Auth extends MY_controller {
 		if($this->input->post('email') == $user->email && password_verify($this->input->post('password'), $user->password)) {
 			$this->session->set_userdata('is_login', true);
 			$this->load->helper('url');
-			redirect('/');
+			$returnURL = $this->input->get('returnURL');
+			redirect($returnURL ? $returnURL : '/');
 		} else {
 			$this->session->set_flashdata('message', '로그인에 실패 했습니다.');
 			$this->load->helper('url');
