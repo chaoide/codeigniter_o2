@@ -1,16 +1,18 @@
 <?php
-class Auth extends CI_controller {
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Auth extends MY_controller {
 
 	function __construct() {
 		parent::__construct();
 	}
 
 	public function login() {
-		$this->load->view('head');
+		$this->_head();
 
 		$this->load->view('login');
 
-		$this->load->view('footer');
+		$this->_footer();
 	}
 
 	public function logout() {
