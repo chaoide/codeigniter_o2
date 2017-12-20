@@ -6,15 +6,15 @@
 	  <div class="modal-body">
 
 		  <div class="control-group">
-		    <label class="control-label" for="id">아이디</label>
+		    <label class="control-label" for="email">아이디</label>
 		    <div class="controls">
-		      <input type="text" id="id" name="id" placeholder="Id">
+		      <input type="text" id="email" name="email" placeholder="이메일">
 		    </div>
 		  </div>
 		  <div class="control-group">
 		    <label class="control-label" for="password">비밀번호</label>
 		    <div class="controls">
-		      <input type="password" id="password" name="password" placeholder="Password">
+		      <input type="password" id="password" name="password" placeholder="비밀번호">
 		    </div>
 		  </div>
 
