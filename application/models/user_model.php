@@ -5,6 +5,10 @@ class User_model extends CI_Model {
 		parent::__construct();
 	}
 
+	function gets() {
+		return $this->db->query("SELECT * FROM user")->result();
+	}
+
 	function add($option) {
 		$this->db->set('email', $option['email']);
 		$this->db->set('password', $option['password']);
